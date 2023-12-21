@@ -1,14 +1,77 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 60%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+</style>
+</head>
+<body>
+
+
 <h3> Pós-Graduação em Ciência de Dados e Inteligência Artificial / PUCRS </h3>
 
 <h1><i>Market Basket Analysis</i> com Matrículas de Disciplinas </h1>
 <h2>Estudo de Caso no Curso de Engenharia de Software da UDESC </h2>
 <h3>Fernando dos Santos (<a href="mailto:fernando.santos@udesc.br">fernando.santos@udesc.br</a>) </h3>
 
-<p>Este repositório reune materiais complementares ao Trabalho de Conclusão de Curso que aplicou <i>Market Basket Analisys</i> (MBA) para analisar as matrículas de acadêmicos no curso de <a href="https://www.udesc.br/ceavi/engenhariadesoftware">Engenharia de Software</a> da
-<a href="https://www.ceavi.udesc.br">UDESC Alto Vale</a>. </p>
+<p>Este repositório reune materiais complementares ao Trabalho de Conclusão de Curso que aplicou <i>Market Basket Analisys</i> (MBA) para analisar as matrículas de acadêmicos no curso de <a href="https://www.udesc.br/ceavi/engenhariadesoftware" target="_blank">Engenharia de Software</a> da
+<a href="https://www.ceavi.udesc.br" target="_blank">UDESC Alto Vale</a>. </p>
 
 
 <h4>Repositório em Construção</h4>
-<p> O conteúdo será adicionado após 25/12/2023. </p>
+<p> O conteúdo está sendo adicionado aos pontos. Espera-se que o repositório esteja completo até 29/12/2023.</p>
 
-<p>Enquanto isso, aproveite para testar a PoC do sistema proposto, disponível neste <a href="https://colab.research.google.com/drive/1crZRpM8Lp9jkKNC7TSNsgLAoBfoLqomb">Notebook Google Colab</a>.</p>
+<p>Enquanto isso, aproveite para testar a PoC do sistema proposto, disponível neste <a href="https://colab.research.google.com/drive/1crZRpM8Lp9jkKNC7TSNsgLAoBfoLqomb" target="_blank">Notebook Google Colab</a>.</p>
+
+<h2>Visualização de <i>itemsets</i> frequentes</h2>
+<p>Utilizando gráficos <i>chord</i> desenvolvidos com a biblioteca <a href="https://d3blocks.github.io/d3blocks/pages/html/index.html" target="_blank">d3blocks</a>. </p>
+
+<h3>Disciplinas aprovadas</h3>
+<p></p>
+<select name="select_chord_aprovados" onchange="document.getElementById('iframe_chord_aprovados').src=this.options[this.selectedIndex].value">
+	<option value="results/aprovados/chord/chord_n2_f1-4_aprovadas.html" selected>2 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n2_f5-8_aprovadas.html">2 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n3_f1-4_aprovadas.html">3 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n3_f5-8_aprovadas.html">3 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n4_f1-4_aprovadas.html">4 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n4_f5-8_aprovadas.html">4 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n5_f1-4_aprovadas.html">5 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n5_f5-8_aprovadas.html">5 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n6_f1-4_aprovadas.html">6 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n6_f5-8_aprovadas.html">6 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n7_f1-4_aprovadas.html">7 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n7_f5-8_aprovadas.html">7 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n8_f5-8_aprovadas.html">8 disciplinas, fases 5 a 8</option>
+</select>
+
+<div class="container"> 
+  <iframe id="iframe_chord_aprovados" class="responsive-iframe" src="results/aprovados/chord/chord_n2_f1-4_aprovadas.html"></iframe>
+</div>
+
+
+<!--
+ disciplinas, fases 1 a 4
+ disciplinas, fases 5 a 8
+ disciplinas, fases 1 a 4
+ disciplinas, fases 5 a 8
+-->
+
+
+
+</html>
