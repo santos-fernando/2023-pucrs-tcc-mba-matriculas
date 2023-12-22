@@ -1,77 +1,1705 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 60%; /* 16:9 Aspect Ratio */
-}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+    <title>Market Basket Analysis Aplicada nas Matrículas de Engenharia de Software da UDESC</title>
+	<meta name="description" content="Materiais relacionados ao Trabalho de Conclusão de Curso da Pós-Graduação em Ciência de Dados e Inteligência Artificial da PUCRS">
+    <link rel="canonical" href="https://santos-fernando.github.io/2023-pucrs-tcc-mba-matriculas/">
+    <meta property="og:title" content="Market Basket Analysis Aplicada nas Matrículas de Engenharia de Software da UDESC">
+	<meta property="og:description" content="Materiais relacionados ao Trabalho de Conclusão de Curso da Pós-Graduação em Ciência de Dados e Inteligência Artificial da PUCRS">
+	<meta property="og:url" content="https://santos-fernando.github.io/2023-pucrs-tcc-mba-matriculas/">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Market Basket Analysis Aplicada nas Matrículas de Engenharia de Software da UDESC">
+	<link rel="icon" sizes="32x32" href="https://santos-fernando.github.io/2023-pucrs-tcc-mba-matriculas/img/favicon-eso-32x32.png">
+	
+	<style>
+	.container {
+	  position: relative;
+	  width: 100%;
+	  overflow: hidden;
+	  padding-top: 60%; /* 16:9 Aspect Ratio */
+	}
+	
+	.container-demographic {
+	    position: relative;
+		width: 100%;
+		height: 500px;
+		max-height: 500px;
+		overflow: hidden;
+		padding-top: 20px; /* 16:9 Aspect Ratio */
+		padding-bottom: 20px;
+	}
 
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-</style>
+
+	.section {
+	  position: relative;
+	  width: 100%;
+	  padding-top: 15px; 
+	}
+
+	.responsive-iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: none;
+	}
+	
+	.responsive-iframe-demographic {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  width: 100%;
+	  height: 500px;
+	  border: none;
+	}
+	
+	table { border-collapse: collapse; }
+	tr { 
+		border-top: solid 1px;
+		border-bottom: solid 1px;
+	}
+	td {
+		border-right: solid 1px; 
+		border-left: solid 1px;
+	}
+	th {
+		border-right: solid 1px; 
+		border-left: solid 1px;
+	}
+	</style>
+	
 </head>
 <body>
 
 
-<h3> Pós-Graduação em Ciência de Dados e Inteligência Artificial / PUCRS </h3>
+<h2> Pós-Graduação em Ciência de Dados e Inteligência Artificial / PUCRS </h2>
 
-<h1><i>Market Basket Analysis</i> com Matrículas de Disciplinas </h1>
-<h2>Estudo de Caso no Curso de Engenharia de Software da UDESC </h2>
+<h1><i>Market Basket Analysis</i> Aplicada nas Matrículas de Engenharia de Software da UDESC</h1>
 <h3>Fernando dos Santos (<a href="mailto:fernando.santos@udesc.br">fernando.santos@udesc.br</a>) </h3>
 
 <p>Este repositório reune materiais complementares ao Trabalho de Conclusão de Curso que aplicou <i>Market Basket Analisys</i> (MBA) para analisar as matrículas de acadêmicos no curso de <a href="https://www.udesc.br/ceavi/engenhariadesoftware" target="_blank">Engenharia de Software</a> da
 <a href="https://www.ceavi.udesc.br" target="_blank">UDESC Alto Vale</a>. </p>
 
+<h2>Sumário</h2>
 
-<h4>Repositório em Construção</h4>
-<p> O conteúdo está sendo adicionado aos pontos. Espera-se que o repositório esteja completo até 29/12/2023.</p>
+<ol>
+	<li><a href="#indicadores_demograficos">Indicadores Demográficos</a></li>
+	<li><a href="#indicadores_matricula_conclusao_evasao">Indicadores de Matrícula/Conclusão/Evasão</a></li>
+	<li><a href="#indicadores_aprov_naoaprov">Indicadores de Aprovações e Não Aprovações</a></li>
+	<li><i>Market Basket Analysis</i></li>
+		<ul>
+		<li><a href="#itemsets_frequentes"><i>Itemsets</i> Frequentes</a></li>
+		<li><a href="#regras_associacao">Regras de Associação</a></li>
+		</ul>
+	<li><a href="#poc">Prova de Conceito de um Sistema de Recomendação</a></li>
+</ol>
 
-<p>Enquanto isso, aproveite para testar a PoC do sistema proposto, disponível neste <a href="https://colab.research.google.com/drive/1crZRpM8Lp9jkKNC7TSNsgLAoBfoLqomb" target="_blank">Notebook Google Colab</a>.</p>
+<hr>
 
-<h2>Visualização de <i>itemsets</i> frequentes</h2>
-<p>Utilizando gráficos <i>chord</i> desenvolvidos com a biblioteca <a href="https://d3blocks.github.io/d3blocks/pages/html/index.html" target="_blank">d3blocks</a>. </p>
+<div id="indicadores_demograficos" class="section">
+<h2>Indicadores Demográficos</h2>
+<h2>Ensino Médio</h2>
+Gráfico interativo com o tipo de instituição onde acadêmico concluiu o ensino médio.
+<p></p>
+<div class="container-demographic"> 
+  <iframe id="iframe_pie_ens_medio" class="responsive-iframe-demographic" src="results/demograficos/ensino-medio-pie.html"></iframe>
+</div>
+<p></p>
 
-<h3>Disciplinas aprovadas</h3>
+<h2>Formas de Ingresso</h2>
+Gráfico interativo com as formas de ingresso dos acadêmicos.
+<p></p>
+<div class="container-demographic"> 
+  <iframe id="iframe_pie_formas_ingresso" class="responsive-iframe-demographic" src="results/demograficos/formas-ingresso-pie.html"></iframe>
+</div>
+<p></p>
+
+</div> <!-- div section indicadores demograficos -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+
+<hr>
+
+<div id="indicadores_matricula_conclusao_evasao" class="section">
+<h2>Indicadores de Matrícula/Conclusão/Evasão</h2>
+Gráfico interativo com a <strong>quantidade</strong> e o <strong>percentual</strong> de matrículas/evasão/formaturas por semestres cursados.
+
+<p></p>
+<div class="container-demographic"> 
+  <iframe id="iframe_barplot_numero_matriculas" class="responsive-iframe-demographic " src="results/demograficos/semestres-cursados-numero-matric-evasao-formatura.html"></iframe>
+</div>
+<p></p>
+
+<div class="container-demographic"> 
+  <iframe id="iframe_barplot_perc_matriculas" class="responsive-iframe-demographic " src="results/demograficos/semestres-cursados-perc-matric-evasao-formatura.html"></iframe>
+</div>
+<p></p>
+
+</div> <!-- div section indicadores matriculas evasao -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+
+<hr>
+
+<div id="indicadores_aprov_naoaprov" class="section">
+<h2>Indicadores de Matrícula/Conclusão/Evasão</h2>
+
+<p>Gráficos com os valores de suporte (frequência) de aprovação/não aprovação em cada disciplina. </p>
+
+
+<img src="results/aprovados/barplot/barplot-suporte-matriculas-aprovadas.png"/>
+
+<p></p>
+
+<img src="results/naoaprovados/barplot/barplot-suporte-matriculas-nao-aprovadas.png"/>
+</div> <!-- div section indicadores aprovacao/nao aprovacao -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+
+<hr>
+
+<div id="regras_associacao" class="section">
+<h2>Regras de Associação</h2>
+
+</div>
+
+
+
+
+
+<div id="itemsets_frequentes" class="section">
+
+<h2><i>Itemsets</i> frequentes</h2>
+<p>Um <i>itemset</i> é um conjunto de itens que são comprados juntos na mesma transação. Neste trabalho, um <i>itemset</i> representa um conjunto de disciplinas matriculadas/cursadas juntas.</p> 
+
+<p>Para cada <i>itemset</i> podemos calcular seu valor de <i>suporte</i>. O suporte é a frequência de ocorrência do <i>itemset</i> em todas as transações. Em outras palavras, é o <i>percentual</i> de transações que contém os elementos do <i>itemset</i>. Sendo assim, o valor de suporte indica a popularidade dos itens do <i>itemset</i>. </p>
+
+<p>A seguir, apresentamos os <i>itemsets</i> mais frequentes (populares) entre as matrículas <strong>aprovadas</strong> e <strong>reprovadas</strong>. Dois formatos de visualização são adotados: tabular e gráfico. Na visualização tabular, uma tabela apresenta os <i>itemsets</i> mais frequente que contém cada disciplina do curso. Já na visualização gráfica, um gráfico <i>chord</i> é utilizado para mostrar a relação entre as disciplinas dos <i>itemsets</i> mais frequentes que contém cada disicplina do curso. Os gráficos foram desenvolvidos com a biblioteca <a href="https://d3blocks.github.io/d3blocks/pages/html/index.html" target="_blank">d3blocks</a>. </p>
+
+<h3><i>Itemsets</i> frequentes entre matrículas APROVADAS</h3>
+
+<h3 id="aprovados_vis_tabular">Visualização tabular</h3>
+A tabela a seguir apresenta o <i>itemset</i> com maior suporte, para cada disciplina e tamanho de <i>itemset</i> encontrado. Nos casos em que há mais de um <i>itemset</i> com o mesmo valor máximo de suporte, todos são mostrados. A notação de {chaves} é utilizada para representar os <i>itemsets</i>.
+<p></p>
+
+<table>
+    <thead>
+		<tr>
+            <th></th>
+            <th colspan="2">Tamanho 2</th>
+            <th colspan="2">Tamanho 3</th>
+            <th colspan="2">Tamanho 4</th>
+            <th colspan="2">Tamanho 5</th>
+            <th colspan="2">Tamanho 6</th>
+            <th colspan="2">Tamanho 7</th>
+        </tr>
+        <tr>
+            <th>Disciplina</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>15ARC</th>
+            <td>{15FES, 15ARC}</td>
+            <td>0.174</td>
+            <td>{15FAD, 15FES, 15ARC}</td>
+            <td>0.162</td>
+            <td>{15FAD, 15CEX, 15FES, 15ARC}</td>
+            <td>0.157</td>
+            <td>{15MAD, 15ARC, 15FES, 15FAD, 15CEX}</td>
+            <td>0.123</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15CEX</th>
+            <td>{15FAD, 15CEX}</td>
+            <td>0.17</td>
+            <td>{15FES, 15CEX, 15ARC},{15FAD, 15CEX, 15FES}</td>
+            <td>0.161</td>
+            <td>{15FAD, 15CEX, 15FES, 15ARC}</td>
+            <td>0.157</td>
+            <td>{15MAD, 15ARC, 15FES, 15FAD, 15CEX}</td>
+            <td>0.123</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15FAD</th>
+            <td>{15FAD, 15FES}</td>
+            <td>0.171</td>
+            <td>{15FAD, 15FES, 15ARC}</td>
+            <td>0.162</td>
+            <td>{15FAD, 15CEX, 15FES, 15ARC}</td>
+            <td>0.157</td>
+            <td>{15MAD, 15ARC, 15FES, 15FAD, 15CEX}</td>
+            <td>0.123</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15FES</th>
+            <td>{15FES, 15ARC}</td>
+            <td>0.174</td>
+            <td>{15FAD, 15FES, 15ARC}</td>
+            <td>0.162</td>
+            <td>{15FAD, 15CEX, 15FES, 15ARC}</td>
+            <td>0.157</td>
+            <td>{15MAD, 15ARC, 15FES, 15FAD, 15CEX}</td>
+            <td>0.123</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15INP</th>
+            <td>{15INP, 15FES}</td>
+            <td>0.137</td>
+            <td>{15INP, 15FES, 15ARC}</td>
+            <td>0.132</td>
+            <td>{15INP, 15FAD, 15FES, 15ARC}</td>
+            <td>0.125</td>
+            <td>{15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.122</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15MAD</th>
+            <td>{15FES, 15MAD}</td>
+            <td>0.137</td>
+            <td>{15FES, 15MAD, 15ARC}</td>
+            <td>0.133</td>
+            <td>{15FAD, 15FES, 15MAD, 15ARC}</td>
+            <td>0.127</td>
+            <td>{15MAD, 15ARC, 15FES, 15FAD, 15CEX}</td>
+            <td>0.123</td>
+            <td>{15MAD, 15ARC, 15FES, 15INP, 15FAD, 15CEX}</td>
+            <td>0.111</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25ALG</th>
+            <td>{25SIS, 25ALG}</td>
+            <td>0.093</td>
+            <td>{25ALG, 25SIS, 25PRS}</td>
+            <td>0.088</td>
+            <td>{25PRI, 25ALG, 25SIS, 25PRS}</td>
+            <td>0.085</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRS, 25SIS}</td>
+            <td>0.082</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25GRH</th>
+            <td>{25PRI, 25GRH}</td>
+            <td>0.124</td>
+            <td>{25PRI, 25GRH, 25SIS}</td>
+            <td>0.114</td>
+            <td>{25PRI, 25GRH, 25SIS, 25PRS}</td>
+            <td>0.106</td>
+            <td>{25GRH, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.086</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25PRE</th>
+            <td>{25PRE, 25ALG}</td>
+            <td>0.082</td>
+            <td>{25PRI, 25PRE, 25SIS}</td>
+            <td>0.079</td>
+            <td>{25PRI, 25PRE, 25SIS, 25PRS}</td>
+            <td>0.077</td>
+            <td>{25GRH, 25PRE, 25PRI, 25PRS, 25SIS}</td>
+            <td>0.075</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRS, 25SIS}</td>
+            <td>0.071</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25PRI</th>
+            <td>{25PRI, 25PRS},{25PRI, 25SIS}</td>
+            <td>0.125</td>
+            <td>{25PRI, 25SIS, 25PRS}</td>
+            <td>0.115</td>
+            <td>{25PRI, 25GRH, 25SIS, 25PRS}</td>
+            <td>0.106</td>
+            <td>{25GRH, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.086</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25PRO1</th>
+            <td>{25PRI, 25PRO1}</td>
+            <td>0.099</td>
+            <td>{25PRI, 25PRS, 25PRO1},{25PRI, 25SIS, 25PRO1}</td>
+            <td>0.094</td>
+            <td>{25PRI, 25SIS, 25PRS, 25PRO1}</td>
+            <td>0.091</td>
+            <td>{25GRH, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.086</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25PRS</th>
+            <td>{25SIS, 25PRS}</td>
+            <td>0.126</td>
+            <td>{25PRI, 25SIS, 25PRS}</td>
+            <td>0.115</td>
+            <td>{25PRI, 25GRH, 25SIS, 25PRS}</td>
+            <td>0.106</td>
+            <td>{25GRH, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.086</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>25SIS</th>
+            <td>{25SIS, 25PRS}</td>
+            <td>0.126</td>
+            <td>{25PRI, 25SIS, 25PRS}</td>
+            <td>0.115</td>
+            <td>{25PRI, 25GRH, 25SIS, 25PRS}</td>
+            <td>0.106</td>
+            <td>{25GRH, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.086</td>
+            <td>{25GRH, 25ALG, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG, 25PRE, 25PRI, 25PRO1, 25PRS, 25SIS}</td>
+            <td>0.066</td>
+        </tr>
+        <tr>
+            <th>35BAD</th>
+            <td>{35PRO2, 35BAD}</td>
+            <td>0.078</td>
+            <td>{35BAD, 35FCO, 35REQ}</td>
+            <td>0.068</td>
+            <td>{35PRO2, 35BAD, 35FCO, 35REQ}</td>
+            <td>0.059</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC}</td>
+            <td>0.05</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35CDI</th>
+            <td>{35BAD, 35CDI}</td>
+            <td>0.057</td>
+            <td>{35PRO2, 35BAD, 35CDI}</td>
+            <td>0.051</td>
+            <td>{35CDI, 35BAD, 35FCO, 35REQ}</td>
+            <td>0.047</td>
+            <td>{35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.045</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35FCO</th>
+            <td>{35FCO, 35REQ}</td>
+            <td>0.083</td>
+            <td>{35BAD, 35FCO, 35REQ}</td>
+            <td>0.068</td>
+            <td>{35PRO2, 35BAD, 35FCO, 35REQ}</td>
+            <td>0.059</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC}</td>
+            <td>0.05</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35MPC</th>
+            <td>{35FCO, 35MPC}</td>
+            <td>0.069</td>
+            <td>{35REQ, 35FCO, 35MPC}</td>
+            <td>0.063</td>
+            <td>{35REQ, 35BAD, 35FCO, 35MPC}</td>
+            <td>0.057</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC}</td>
+            <td>0.05</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35PRO2</th>
+            <td>{35PRO2, 35BAD}</td>
+            <td>0.078</td>
+            <td>{35PRO2, 35BAD, 35FCO}</td>
+            <td>0.066</td>
+            <td>{35PRO2, 35BAD, 35FCO, 35REQ}</td>
+            <td>0.059</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC}</td>
+            <td>0.05</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35REQ</th>
+            <td>{35FCO, 35REQ}</td>
+            <td>0.083</td>
+            <td>{35BAD, 35FCO, 35REQ}</td>
+            <td>0.068</td>
+            <td>{35PRO2, 35BAD, 35FCO, 35REQ}</td>
+            <td>0.059</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC}</td>
+            <td>0.05</td>
+            <td>{35PRO2, 35FCO, 35REQ, 35BAD, 35MPC, 35CDI}</td>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45EMP</th>
+            <td>{45EMP, 45LOG}</td>
+            <td>0.056</td>
+            <td>{45PRJ, 45EMP, 45PIN1}</td>
+            <td>0.046</td>
+            <td>{45PRJ, 45EMP, 45PBD, 45PIN1}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45PRJ, 45PBD}</td>
+            <td>0.04</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45EST</th>
+            <td>{45PRJ, 45EST}</td>
+            <td>0.054</td>
+            <td>{45PRJ, 45EST, 45PBD}</td>
+            <td>0.047</td>
+            <td>{45PRJ, 45EST, 45PIN1, 45PBD}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.038</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45LOG</th>
+            <td>{45EMP, 45LOG}</td>
+            <td>0.056</td>
+            <td>{45PRJ, 45EMP, 45LOG},{45PRJ, 45PBD, 45LOG},{45PRJ, 45PIN1, 45LOG},{45EMP, 45PIN1, 45LOG}</td>
+            <td>0.046</td>
+            <td>{45PRJ, 45PBD, 45PIN1, 45LOG}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45PRJ, 45PBD}</td>
+            <td>0.04</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PBD</th>
+            <td>{45PRJ, 45PBD}</td>
+            <td>0.059</td>
+            <td>{45PRJ, 45PBD, 45PIN1}</td>
+            <td>0.052</td>
+            <td>{45PRJ, 45EST, 45PIN1, 45PBD}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45PRJ, 45PBD}</td>
+            <td>0.04</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PIN1</th>
+            <td>{45PRJ, 45PIN1}</td>
+            <td>0.058</td>
+            <td>{45PRJ, 45PBD, 45PIN1}</td>
+            <td>0.052</td>
+            <td>{45PRJ, 45EST, 45PIN1, 45PBD}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45PRJ, 45PBD}</td>
+            <td>0.04</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PRJ</th>
+            <td>{45PRJ, 45PBD}</td>
+            <td>0.059</td>
+            <td>{45PRJ, 45PBD, 45PIN1}</td>
+            <td>0.052</td>
+            <td>{45PRJ, 45EST, 45PIN1, 45PBD}</td>
+            <td>0.043</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45PRJ, 45PBD}</td>
+            <td>0.04</td>
+            <td>{45PIN1, 45LOG, 45EMP, 45EST, 45PRJ, 45PBD}</td>
+            <td>0.036</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55DSW</th>
+            <td>{55PIN2, 55DSW}</td>
+            <td>0.04</td>
+            <td>{55PIN2, 55DSW, 55EQU}</td>
+            <td>0.031</td>
+            <td>{55PIN2, 55DSW, 55MQU, 55EQU},{55PPR, 55PIN2, 55DSW, 55EQU}</td>
+            <td>0.027</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55EQU</th>
+            <td>{55MQU, 55EQU}</td>
+            <td>0.042</td>
+            <td>{55PPR, 55PIN2, 55EQU}</td>
+            <td>0.033</td>
+            <td>{55PPR, 55PIN2, 55MQU, 55EQU}</td>
+            <td>0.029</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55RED}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55MQU</th>
+            <td>{55MQU, 55EQU}</td>
+            <td>0.042</td>
+            <td>{55PIN2, 55MQU, 55EQU}</td>
+            <td>0.032</td>
+            <td>{55PPR, 55PIN2, 55MQU, 55EQU}</td>
+            <td>0.029</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55RED}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55PIN2</th>
+            <td>{55PIN2, 55DSW},{55PPR, 55PIN2}</td>
+            <td>0.04</td>
+            <td>{55PPR, 55PIN2, 55EQU}</td>
+            <td>0.033</td>
+            <td>{55PPR, 55PIN2, 55MQU, 55EQU}</td>
+            <td>0.029</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55RED}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55PPR</th>
+            <td>{55PPR, 55PIN2}</td>
+            <td>0.04</td>
+            <td>{55PPR, 55PIN2, 55EQU}</td>
+            <td>0.033</td>
+            <td>{55PPR, 55PIN2, 55MQU, 55EQU}</td>
+            <td>0.029</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55RED}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55RED</th>
+            <td>{55EQU, 55RED}</td>
+            <td>0.04</td>
+            <td>{55PIN2, 55EQU, 55RED}</td>
+            <td>0.031</td>
+            <td>{55PIN2, 55MQU, 55EQU, 55RED}</td>
+            <td>0.028</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55RED}</td>
+            <td>0.026</td>
+            <td>{55MQU, 55EQU, 55PPR, 55PIN2, 55DSW, 55RED}</td>
+            <td>0.022</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65DSD</th>
+            <td>{65DSD, 65PIN3}</td>
+            <td>0.039</td>
+            <td>{65EEO, 65DSD, 65PIN3},{65GRP1, 65EEO, 65DSD}</td>
+            <td>0.036</td>
+            <td>{65GRP1, 65DSD, 65EEO, 65OPT1}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES},{65GRP1, 65EEO, 65OPT1, 65DSD, 65PIN3}</td>
+            <td>0.034</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65EEO</th>
+            <td>{65GRP1, 65EEO}</td>
+            <td>0.046</td>
+            <td>{65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.04</td>
+            <td>{65TES, 65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.038</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65TES, 65PIN3}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65GRP1</th>
+            <td>{65GRP1, 65EEO}</td>
+            <td>0.046</td>
+            <td>{65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.04</td>
+            <td>{65TES, 65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.038</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65TES, 65PIN3}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65OPT1</th>
+            <td>{65OPT1, 65GRP1}</td>
+            <td>0.045</td>
+            <td>{65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.04</td>
+            <td>{65TES, 65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.038</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65TES, 65PIN3}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65PIN3</th>
+            <td>{65OPT1, 65PIN3}</td>
+            <td>0.04</td>
+            <td>{65OPT1, 65GRP1, 65PIN3}</td>
+            <td>0.037</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65PIN3}</td>
+            <td>0.036</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65TES, 65PIN3}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65TES</th>
+            <td>{65TES, 65OPT1},{65TES, 65GRP1}</td>
+            <td>0.044</td>
+            <td>{65TES, 65OPT1, 65GRP1}</td>
+            <td>0.04</td>
+            <td>{65TES, 65GRP1, 65EEO, 65OPT1}</td>
+            <td>0.038</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65TES, 65PIN3}</td>
+            <td>0.035</td>
+            <td>{65GRP1, 65EEO, 65OPT1, 65DSD, 65TES, 65PIN3}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>75ARS</th>
+            <td>{75QUA, 75ARS},{75ARS, 75GCF},{75GRP2, 75ARS}</td>
+            <td>0.034</td>
+            <td>{75GRP2, 75ARS, 75GCF}</td>
+            <td>0.031</td>
+            <td>{75GRP2, 75QUA, 75ARS, 75GCF}</td>
+            <td>0.03</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75ARS}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75GCF</th>
+            <td>{75GRP2, 75GCF}</td>
+            <td>0.038</td>
+            <td>{75GRP2, 75QUA, 75GCF}</td>
+            <td>0.033</td>
+            <td>{75GRP2, 75QUA, 75ARS, 75GCF}</td>
+            <td>0.03</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75ARS}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75GRP2</th>
+            <td>{75GRP2, 75GCF}</td>
+            <td>0.038</td>
+            <td>{75GRP2, 75QUA, 75GCF}</td>
+            <td>0.033</td>
+            <td>{75GRP2, 75QUA, 75ARS, 75GCF}</td>
+            <td>0.03</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75ARS}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75INC</th>
+            <td>{75GRP2, 75INC}</td>
+            <td>0.031</td>
+            <td>{75GRP2, 75INC, 75GCF}</td>
+            <td>0.029</td>
+            <td>{75GRP2, 75QUA, 75INC, 75GCF}</td>
+            <td>0.028</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75OPT2</th>
+            <td>{75OPT2, 75GRP2}</td>
+            <td>0.032</td>
+            <td>{75OPT2, 75GRP2, 75GCF}</td>
+            <td>0.031</td>
+            <td>{75OPT2, 75QUA, 75GRP2, 75GCF}</td>
+            <td>0.029</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75ARS}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75QUA</th>
+            <td>{75QUA, 75GCF}</td>
+            <td>0.037</td>
+            <td>{75GRP2, 75QUA, 75GCF}</td>
+            <td>0.033</td>
+            <td>{75GRP2, 75QUA, 75ARS, 75GCF}</td>
+            <td>0.03</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75ARS}</td>
+            <td>0.027</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>75TCC1</th>
+            <td>{75GRP2, 75TCC1}</td>
+            <td>0.03</td>
+            <td>{75GRP2, 75GCF, 75TCC1}</td>
+            <td>0.028</td>
+            <td>{75GRP2, 75QUA, 75GCF, 75TCC1}</td>
+            <td>0.027</td>
+            <td>{75GCF, 75QUA, 75TCC1, 75GRP2, 75ARS}</td>
+            <td>0.026</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75ARS}</td>
+            <td>0.024</td>
+            <td>{75OPT2, 75GCF, 75QUA, 75TCC1, 75GRP2, 75INC, 75ARS}</td>
+            <td>0.023</td>
+        </tr>
+        <tr>
+            <th>85ECS</th>
+            <td>{85MKT, 85ECS}</td>
+            <td>0.04</td>
+            <td>{85MKT, 85ECS, 85EEC}</td>
+            <td>0.021</td>
+            <td>{85MAN, 85MPS, 85ECS, 85EEC}</td>
+            <td>0.02</td>
+            <td>{85EEC, 85ECS, 85MAN, 85MPS, 85MEF}</td>
+            <td>0.019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85EEC</th>
+            <td>{85MPS, 85EEC}</td>
+            <td>0.027</td>
+            <td>{85MAN, 85MPS, 85EEC}</td>
+            <td>0.025</td>
+            <td>{85MAN, 85MPS, 85EEC, 85MEF}</td>
+            <td>0.022</td>
+            <td>{85EEC, 85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85MAN</th>
+            <td>{85MAN, 85MPS}</td>
+            <td>0.03</td>
+            <td>{85MAN, 85MPS, 85OPT3},{85MAN, 85MPS, 85MEF}</td>
+            <td>0.026</td>
+            <td>{85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.023</td>
+            <td>{85EEC, 85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85MEF</th>
+            <td>{85MPS, 85MEF}</td>
+            <td>0.027</td>
+            <td>{85MAN, 85MPS, 85MEF}</td>
+            <td>0.026</td>
+            <td>{85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.023</td>
+            <td>{85EEC, 85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85MKT</th>
+            <td>{85MKT, 85ECS}</td>
+            <td>0.04</td>
+            <td>{85MAN, 85MKT, 85MPS},{85MKT, 85ECS, 85EEC}</td>
+            <td>0.021</td>
+            <td>{85MAN, 85MKT, 85MPS, 85MEF},{85MAN, 85MKT, 85MPS, 85EEC}</td>
+            <td>0.02</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85MPS</th>
+            <td>{85MAN, 85MPS}</td>
+            <td>0.03</td>
+            <td>{85MAN, 85MPS, 85OPT3},{85MAN, 85MPS, 85MEF}</td>
+            <td>0.026</td>
+            <td>{85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.023</td>
+            <td>{85EEC, 85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85OPT3</th>
+            <td>{85MPS, 85OPT3}</td>
+            <td>0.027</td>
+            <td>{85MAN, 85MPS, 85OPT3}</td>
+            <td>0.026</td>
+            <td>{85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.023</td>
+            <td>{85EEC, 85MAN, 85MPS, 85MEF, 85OPT3}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85TCC2</th>
+            <td>{85MPS, 85TCC2}</td>
+            <td>0.019</td>
+        </tr>
+    </tbody>
+</table>
+
+<p></p> 
+ 
+
+<h3 id="aprovados_vis_grafica">Visualização gráfica</h3>
+<p>Os gráficos estão separados por tamanho dos <i>itemsets</i>. Cada gráfico agrupa metade das fases do curso, e conecta cada disciplina com as demais que compõem o <i>itemset</i> mais frequente que contém a disciplina. Os gráficos são interativos, ao passar o cursor sobre as ligações, é mostrado o valor de suporte do <i>itemset</i> que relaciona as disciplinas. A espessura da ligação é proporcional ao suporte. </p>
+<p>O sentido (seta) indica o <i>itemset</i> que a ligação representa. Ligações que partem de uma disciplina conectam com outras contidas no <i>itemset</i> mais frequente daquela disciplina. Já ligações que chegam indicam que a disciplina está contida no <i>itemset</i> mais frequente de outras disciplinas. Por exemplo, no caso com <i>itemsets</i> de tamanho 2 das fases 1 a 4, a disciplina 15FES tem apenas uma conexão partindo dela para conectar à outra disciplina do seu <i>itemset</i> mais frequente, no caso, 15ARC. Contudo, ela tem várias conexões chegando, o que indica que ela está no <i>itemset</i> mais frequente de várias outras disciplinas, no caso 15ARC, 15FAD, 15INP e 15MAD. Isso indica que várias outras disciplinas frequentemente se combinam com 15FES para aprovação. Ainda na mesma visualização de <i>itemsets</i> de tamanho 2 das fases 1 a 4, verifica-se não haver ligações que chegam nas disciplinas 15INP e 15MAD, o que indica que elas não estão contidas no <i>itemset</i> mais frequente das outras disciplinas, sugerindo que a combinação de outras disciplinas com essas não é popular. </p>
+
+<p>Selecione o gráfico que deseja visualizar:</p>
 <p></p>
 <select name="select_chord_aprovados" onchange="document.getElementById('iframe_chord_aprovados').src=this.options[this.selectedIndex].value">
-	<option value="results/aprovados/chord/chord_n2_f1-4_aprovadas.html" selected>2 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n2_f5-8_aprovadas.html">2 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n3_f1-4_aprovadas.html">3 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n3_f5-8_aprovadas.html">3 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n4_f1-4_aprovadas.html">4 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n4_f5-8_aprovadas.html">4 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n5_f1-4_aprovadas.html">5 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n5_f5-8_aprovadas.html">5 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n6_f1-4_aprovadas.html">6 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n6_f5-8_aprovadas.html">6 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n7_f1-4_aprovadas.html">7 disciplinas, fases 1 a 4</option>
-	<option value="results/aprovados/chord/chord_n7_f5-8_aprovadas.html">7 disciplinas, fases 5 a 8</option>
-	<option value="results/aprovados/chord/chord_n8_f5-8_aprovadas.html">8 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n2_f1-4_aprovadas.html" selected><i>Itemsets</i> com 2 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n2_f5-8_aprovadas.html"><i>Itemsets</i> com 2 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n3_f1-4_aprovadas.html"><i>Itemsets</i> com 3 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n3_f5-8_aprovadas.html"><i>Itemsets</i> com 3 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n4_f1-4_aprovadas.html"><i>Itemsets</i> com 4 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n4_f5-8_aprovadas.html"><i>Itemsets</i> com 4 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n5_f1-4_aprovadas.html"><i>Itemsets</i> com 5 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n5_f5-8_aprovadas.html"><i>Itemsets</i> com 5 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n6_f1-4_aprovadas.html"><i>Itemsets</i> com 6 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n6_f5-8_aprovadas.html"><i>Itemsets</i> com 6 disciplinas, fases 5 a 8</option>
+	<option value="results/aprovados/chord/chord_n7_f1-4_aprovadas.html"><i>Itemsets</i> com 7 disciplinas, fases 1 a 4</option>
+	<option value="results/aprovados/chord/chord_n7_f5-8_aprovadas.html"><i>Itemsets</i> com 7 disciplinas, fases 5 a 8</option>
 </select>
 
 <div class="container"> 
   <iframe id="iframe_chord_aprovados" class="responsive-iframe" src="results/aprovados/chord/chord_n2_f1-4_aprovadas.html"></iframe>
 </div>
 
+<hr>
 
-<!--
- disciplinas, fases 1 a 4
- disciplinas, fases 5 a 8
- disciplinas, fases 1 a 4
- disciplinas, fases 5 a 8
--->
+<h3><i>Itemsets</i> frequentes entre matrículas NÃO APROVADAS</h3>
+
+<h3>Visualização tabular</h3>
+O formato é o mesmo explicado <a href="#aprovados_vis_tabular">anteriormente</a>.
+<p></p> 
+
+<table>
+    <thead>
+		<tr>
+            <th></th>
+            <th colspan="2">Tamanho 2</th>
+            <th colspan="2">Tamanho 3</th>
+            <th colspan="2">Tamanho 4</th>
+            <th colspan="2">Tamanho 5</th>
+            <th colspan="2">Tamanho 6</th>
+            <th colspan="2">Tamanho 7</th>
+        </tr>
+        <tr>
+            <th>Disciplina</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+            <th>Itemset</th>
+            <th>Suporte</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>15ARC</th>
+            <td>0.104</td>
+            <td>{15INP, 15ARC}</td>
+            <td>0.097</td>
+            <td>{15INP, 15ARC, 15MAD}</td>
+            <td>0.092</td>
+            <td>{15FES, 15INP, 15ARC, 15MAD}</td>
+            <td>0.085</td>
+            <td>{15FAD, 15INP, 15ARC, 15MAD, 15FES},{15INP, 15CEX, 15ARC, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>15CEX</th>
+            <td>0.102</td>
+            <td>{15CEX, 15INP}</td>
+            <td>0.09</td>
+            <td>{15CEX, 15INP, 15MAD}</td>
+            <td>0.086</td>
+            <td>{15CEX, 15INP, 15ARC, 15MAD}</td>
+            <td>0.082</td>
+            <td>{15FAD, 15INP, 15CEX, 15MAD, 15FES},{15INP, 15CEX, 15ARC, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>15FAD</th>
+            <td>0.107</td>
+            <td>{15MAD, 15FAD}</td>
+            <td>0.093</td>
+            <td>{15MAD, 15INP, 15FAD}</td>
+            <td>0.089</td>
+            <td>{15FES, 15MAD, 15INP, 15FAD}</td>
+            <td>0.083</td>
+            <td>{15FAD, 15INP, 15CEX, 15MAD, 15FES},{15FAD, 15INP, 15ARC, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>15FES</th>
+            <td>0.102</td>
+            <td>{15FES, 15INP}</td>
+            <td>0.098</td>
+            <td>{15FES, 15INP, 15MAD}</td>
+            <td>0.093</td>
+            <td>{15FES, 15INP, 15ARC, 15MAD}</td>
+            <td>0.085</td>
+            <td>{15FAD, 15INP, 15CEX, 15MAD, 15FES},{15INP, 15CEX, 15ARC, 15MAD, 15FES},{15FAD, 15INP, 15ARC, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>15INP</th>
+            <td>0.234</td>
+            <td>{15INP, 15MAD}</td>
+            <td>0.139</td>
+            <td>{15FES, 15INP, 15MAD}</td>
+            <td>0.093</td>
+            <td>{15FES, 15INP, 15ARC, 15MAD}</td>
+            <td>0.085</td>
+            <td>{15FAD, 15INP, 15ARC, 15MAD, 15FES},{15INP, 15CEX, 15ARC, 15MAD, 15FES},{15FAD, 15INP, 15CEX, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>15MAD</th>
+            <td>0.169</td>
+            <td>{15INP, 15MAD}</td>
+            <td>0.139</td>
+            <td>{15FES, 15INP, 15MAD}</td>
+            <td>0.093</td>
+            <td>{15FES, 15INP, 15ARC, 15MAD}</td>
+            <td>0.085</td>
+            <td>{15FAD, 15INP, 15ARC, 15MAD, 15FES},{15INP, 15CEX, 15ARC, 15MAD, 15FES},{15FAD, 15INP, 15CEX, 15MAD, 15FES}</td>
+            <td>0.079</td>
+            <td>{15INP, 15CEX, 15MAD, 15ARC, 15FAD, 15FES}</td>
+            <td>0.078</td>
+        </tr>
+        <tr>
+            <th>25ALG</th>
+            <td>0.135</td>
+            <td>{25PRE, 25ALG}</td>
+            <td>0.089</td>
+            <td>{25PRE, 25ALG, 25PRO1}</td>
+            <td>0.042</td>
+            <td>{25PRE, 25PRS, 25ALG, 25PRO1}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25GRH</th>
+            <td>0.074</td>
+            <td>{25GRH, 25ALG}</td>
+            <td>0.035</td>
+            <td>{25GRH, 25PRE, 25ALG}</td>
+            <td>0.027</td>
+            <td>{25GRH, 25SIS, 25PRI, 25PRS}</td>
+            <td>0.019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25PRE</th>
+            <td>0.165</td>
+            <td>{25PRE, 25ALG}</td>
+            <td>0.089</td>
+            <td>{25PRE, 25ALG, 25PRO1}</td>
+            <td>0.042</td>
+            <td>{25PRE, 25PRS, 25ALG, 25PRO1}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25PRI</th>
+            <td>0.045</td>
+            <td>{25GRH, 25PRI}</td>
+            <td>0.031</td>
+            <td>{25GRH, 25PRI, 25PRS},{25SIS, 25PRI, 25PRS}</td>
+            <td>0.023</td>
+            <td>{25GRH, 25SIS, 25PRI, 25PRS}</td>
+            <td>0.019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25PRO1</th>
+            <td>0.105</td>
+            <td>{25PRE, 25PRO1}</td>
+            <td>0.055</td>
+            <td>{25PRE, 25ALG, 25PRO1}</td>
+            <td>0.042</td>
+            <td>{25PRE, 25PRS, 25ALG, 25PRO1}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25PRS</th>
+            <td>0.065</td>
+            <td>{25PRE, 25PRS}</td>
+            <td>0.036</td>
+            <td>{25PRE, 25PRS, 25ALG}</td>
+            <td>0.029</td>
+            <td>{25PRE, 25PRS, 25ALG, 25PRO1}</td>
+            <td>0.021</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>25SIS</th>
+            <td>0.064</td>
+            <td>{25SIS, 25PRS}</td>
+            <td>0.034</td>
+            <td>{25PRE, 25ALG, 25SIS}</td>
+            <td>0.023</td>
+            <td>{25GRH, 25SIS, 25PRI, 25PRS}</td>
+            <td>0.019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35BAD</th>
+            <td>0.037</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35CDI</th>
+            <td>0.176</td>
+            <td>{25PRE, 35CDI}</td>
+            <td>0.04</td>
+            <td>{25PRE, 35CDI, 25ALG}</td>
+            <td>0.019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35FCO</th>
+            <td>0.063</td>
+            <td>{35CDI, 35FCO}</td>
+            <td>0.027</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35MPC</th>
+            <td>0.035</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35PRO2</th>
+            <td>0.059</td>
+            <td>{35PRO2, 35CDI}</td>
+            <td>0.026</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>35REQ</th>
+            <td>0.093</td>
+            <td>{35REQ, 35CDI}</td>
+            <td>0.035</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45EMP</th>
+            <td>0.039</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45EST</th>
+            <td>0.066</td>
+            <td>{45PBD, 45EST}</td>
+            <td>0.025</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45LOG</th>
+            <td>0.081</td>
+            <td>{35CDI, 45LOG}</td>
+            <td>0.032</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PBD</th>
+            <td>0.064</td>
+            <td>{45PBD, 45EST}</td>
+            <td>0.025</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PIN1</th>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>45PRJ</th>
+            <td>0.039</td>
+            <td>{45PRJ, 45PBD}</td>
+            <td>0.023</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55DSW</th>
+            <td>0.041</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55EQU</th>
+            <td>0.037</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55MQU</th>
+            <td>0.034</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55PPR</th>
+            <td>0.045</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>55RED</th>
+            <td>0.051</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65DSD</th>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65GRP1</th>
+            <td>0.02</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65OPT1</th>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>65TES</th>
+            <td>0.023</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>75INC</th>
+            <td>0.069</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>75OPT2</th>
+            <td>0.025</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>75TCC1</th>
+            <td>0.027</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85ECS</th>
+            <td>0.053</td>
+            <td>{85MKT, 85ECS}</td>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85EEC</th>
+            <td>0.072</td>
+            <td>{85EEC, 35CDI}</td>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85MKT</th>
+            <td>0.07</td>
+            <td>{85MKT, 85ECS}</td>
+            <td>0.024</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>85TCC2</th>
+            <td>0.028</td>
+        </tr>
+    </tbody>
+</table>
+<p></p>
+
+<h3>Visualização gráfica</h3>
+O formato é o mesmo explicado <a href="#aprovados_vis_grafica">anteriormente</a>.
 
 
+<p>Selecione o gráfico que deseja visualizar:</p>
+<p></p>
+<select name="select_chord_naoaprovados" onchange="document.getElementById('iframe_chord_naoaprovados').src=this.options[this.selectedIndex].value">
+	<option value="results/naoaprovados/chord/chord_n2_f1-4_naoaprovadas.html" selected><i>Itemsets</i> com 2 disciplinas, fases 1 a 4</option>
+	<option value="results/naoaprovados/chord/chord_n2_f5-8_naoaprovadas.html"><i>Itemsets</i> com 2 disciplinas, fases 5 a 8</option>
+	<option value="results/naoaprovados/chord/chord_n3_f1-4_naoaprovadas.html"><i>Itemsets</i> com 3 disciplinas, fases 1 a 4</option>
+	<option value="results/naoaprovados/chord/chord_n4_f1-4_naoaprovadas.html"><i>Itemsets</i> com 4 disciplinas, fases 1 a 4</option>
+	<option value="results/naoaprovados/chord/chord_n5_f1-4_naoaprovadas.html"><i>Itemsets</i> com 5 disciplinas, fases 1 a 4</option>
+	<option value="results/naoaprovados/chord/chord_n6_f1-4_naoaprovadas.html"><i>Itemsets</i> com 6 disciplinas, fases 1 a 4</option>
+</select>
 
-</html>
+<div class="container"> 
+  <iframe id="iframe_chord_naoaprovados" class="responsive-iframe" src="results/aprovados/chord/chord_n2_f1-4_aprovadas.html"></iframe>
+</div>
+
+</div> <!-- section itemset frequentes -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+
+<hr>
+
+<div id="regras_associacao" class="section">
+<h2>Regras de Associação</h2>
+A seguir são mostradas algumas regras de associação mineradas a partir dos registros de <strong>matrículas aprovadas</strong>.
+
+<h2>Antecedentes de Tamanho 1</h2>
+Nos gráficos interativos a seguir são mostradas as regras de associação cujo <strong>antecedente</strong> tem tamanho 1, ou seja, contém uma única disciplina. 
+
+Os <strong> consequentes</strong> mostrados são aqueles <strong>com máximo valor de <i>lift</p></strong>
+
+A partir destas regras pode-se responder a perguntas do tipo: "quem é aprovado na disciplina <i>x</i>, também é aprovado na(s) disciplina(s) <i>y, z, w</i>".
+
+<p>Selecione o gráfico que deseja visualizar:</p>
+<p></p>
+<select name="select_heatmap_antec1" onchange="document.getElementById('iframe_heatmap_antec1').src=this.options[this.selectedIndex].value">
+	<option value="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_1a4-alen_1-clen_maxlift.html" selected>Fases 1 a 4</option>
+	<option value="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_5a8-alen_1-clen_maxlift.html">Fases 5 a 8</option>
+</select>
+
+<div class="container"> 
+  <iframe id="iframe_heatmap_antec1" class="responsive-iframe" src="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_1a4-alen_1-clen_maxlift.html"></iframe>
+</div>
+
+<hr>
+
+<h2>Consequentes de Tamanho 1</h2>
+Nos gráficos interativos a seguir são mostradas as regras de associação cujo <strong>consequente</strong> tem tamanho 1, ou seja, contém uma única disciplina. 
+
+Os <strong>antecedentes</strong> mostrados são aqueles <strong>com máximo valor de <i>lift</p></strong>
+
+A partir destas regras pode-se responder a perguntas do tipo: quem é aprovado na(s) disciplina(s) <i>x, y, z</i>, também é aprovado na disciplina <i>w</i>.
+
+<p></p>
+<select name="select_heatmap_conseq1" onchange="document.getElementById('iframe_heatmap_conseq1').src=this.options[this.selectedIndex].value">
+	<option value="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_1a4-alen_maxlift-clen_1.html" selected>Fases 1 a 4</option>
+	<option value="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_5a8-alen_maxlift-clen_1.html">Fases 5 a 8</option>
+</select>
+
+<div class="container"> 
+  <iframe id="iframe_heatmap_conseq1" class="responsive-iframe" src="results/aprovados/heatmap-rules/heatmap-rules-aprovados-fases_1a4-alen_maxlift-clen_1.html"></iframe>
+</div>
+<p></p>
+
+</div> <!-- section regras associacao --.
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+<!-- --------- *************************** ------------ -->
+
+<hr>
+
+<div id="poc" class="section">
+<h2>Prova de Conceito de um Sistema de Recomendação</h2>
+<p>Uma PoC de um sistema de recomendação criado a partir das regras de associação mineradas nas matrículas aprovadas está disponível neste <a href="https://colab.research.google.com/drive/1crZRpM8Lp9jkKNC7TSNsgLAoBfoLqomb" target="_blank">Notebook Google Colab</a>.</p>
+</div> <!-- section regras associacao --.
